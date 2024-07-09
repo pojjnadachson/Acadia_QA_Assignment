@@ -1,5 +1,5 @@
 *** Settings ***
-Library         Browser    auto_closeing_level=MANUAL
+Library         Browser      auto_closing_level=MANUAL
 Variables       ../datatest/google_search..yaml
 
 
@@ -13,12 +13,12 @@ Google search result
     New Page    ${url_google}
     Fill Text    css=[name=q]    ${search_term}
     Keyboard Key    press    Enter
-    FOR    ${i}    IN    @{RESULT_INDEX}
+    FOR    ${i}    IN   @{RESULT_INDEX}
         ${elements}=    Get Elements    css=a:has(>h3)
         ${element}=    Set Variable    ${elements}[${i}]
         Click    ${element}
-        Wait Until Network Is Idle
-        Get Url    ==    ${expected_search_result}[${i}]
+        Wait Until Network Is Idle         # Wait untill pages load successful
+        Get Url    ==    ${expected_search_result}[${i}]     # Compare current url with expected result
         Go Back
     END
 

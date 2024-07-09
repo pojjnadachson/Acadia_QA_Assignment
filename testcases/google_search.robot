@@ -8,7 +8,7 @@ Variables       ../datatest/google_search..yaml
 
 
 *** Test Cases ***
-Search Rattana Bundit University
+Google search result
     New Browser    chromium    headless=No
     New Page    ${url_google}
     Fill Text    css=[name=q]    ${search_term}

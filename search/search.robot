@@ -1,7 +1,8 @@
 *** Settings ***
-Library         Browser    auto_closing_level=MANUAL
-Library    Collections
-Library    OperatingSystem
+Library         Browser    auto_closeing_level=MANUAL
+Library         Collections
+Library         OperatingSystem
+Library         XML
 Variables       ../datatest/url_search.yaml
 
 
@@ -23,3 +24,4 @@ Search Rattana Bundit University
         Get Url    ==    ${expected_search_result}[${i}]
         Go Back
     END
+

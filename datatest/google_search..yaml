@@ -1,7 +1,9 @@
 url_google:  https://www.google.co.th 
+search_term: Rattana Bundit University
 expected_search_result:
   -
   -
   - https://www.facebook.com/universityrbac/?locale=kk_KZ
   - https://so03.tci-thaijo.org/index.php/rbac
   - https://www.instagram.com/explore/locations/1016314790/rattana-bundit-university-/
+

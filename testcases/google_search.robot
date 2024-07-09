@@ -1,9 +1,6 @@
 *** Settings ***
 Library         Browser    auto_closeing_level=MANUAL
-Library         Collections
-Library         OperatingSystem
-Library         XML
-Variables       ../datatest/url_search.yaml
+Variables       ../datatest/google_search..yaml
 
 
 *** Variables ***
@@ -14,7 +11,7 @@ Variables       ../datatest/url_search.yaml
 Search Rattana Bundit University
     New Browser    chromium    headless=No
     New Page    ${url_google}
-    Fill Text    css=[name=q]    Rattana Bundit University
+    Fill Text    css=[name=q]    ${search_term}
     Keyboard Key    press    Enter
     FOR    ${i}    IN    @{RESULT_INDEX}
         ${elements}=    Get Elements    css=a:has(>h3)
